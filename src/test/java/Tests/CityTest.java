@@ -1,10 +1,10 @@
 package Tests;
 
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Pages.HomePage;
+
 import static Tests.Driver.Instance;
 
 public class CityTest extends BaseTest {
@@ -17,10 +17,10 @@ public class CityTest extends BaseTest {
         Driver.Instance.navigate().to("https://yandex.ua");
         objHomePage = new HomePage(Instance);
         objHomePage.clickSetCity();
-        objHomePage.setPageCity("Харьков Украина ");
+        objHomePage.setPageCity("Париж Франция ");
         int FirstCity = objHomePage.amountLinks();
         objHomePage.clickSetCity();
-        objHomePage.setPageCity("Киев Украина");
+        objHomePage.setPageCity("Киев Украина  ");
         int SecondCity = objHomePage.amountLinks();
         Assert.assertEquals(FirstCity, SecondCity);
     }

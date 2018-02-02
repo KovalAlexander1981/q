@@ -15,17 +15,18 @@ public abstract class BasePage {
 
 
     public void enterText(By element, String text){
-        new WebDriverWait(Instance, 10).until(ExpectedConditions.elementToBeClickable(element));
+        new WebDriverWait(Instance, 100).until(ExpectedConditions.elementToBeClickable(element));
         Instance.findElement(element).clear();
         Instance.findElement(element).sendKeys(text);
+        Instance.findElement(element).click();
     }
 
     public void click(By element){
-        new WebDriverWait(Instance, 10).until(ExpectedConditions.elementToBeClickable(element));
+        new WebDriverWait(Instance, 100).until(ExpectedConditions.elementToBeClickable(element));
         Instance.findElement(element).click();
     }
     public void clear(By element){
-        new WebDriverWait(Instance, 10).until(ExpectedConditions.elementToBeClickable(element));
+        new WebDriverWait(Instance, 100).until(ExpectedConditions.elementToBeClickable(element));
         Instance.findElement(element).clear();
 
     }

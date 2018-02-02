@@ -4,11 +4,7 @@ import Tests.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
 import java.util.List;
-
-import static org.testng.Assert.assertEquals;
 
 public class HomePage extends BasePage {
 
@@ -34,13 +30,6 @@ public class HomePage extends BasePage {
     public void setPageCity(String strCity) throws InterruptedException {
         enterText(cityName, strCity);
         click(setCity);
-
-        //  if (Driver.Instance.findElement(By.xpath("//button[@type='submit']")).getText() != strCity) {
-        //    enterText(cityName, strCity);
-        //      click(setCity);
-         //    System.out.println();
-         //   }
-            click(submitButton);
         }
 
         //click to link Еще
