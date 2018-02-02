@@ -1,11 +1,11 @@
 package Tests;
 
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Pages.HomePage;
-
-import java.security.Key;
+import static Tests.Driver.Instance;
 
 public class CityTest extends BaseTest {
 
@@ -14,13 +14,13 @@ public class CityTest extends BaseTest {
 
     @Test(description = "Test Case 1 - Set city")
     public void setNewCity() throws InterruptedException {
-
-        objHomePage = new HomePage(driver);
+        Driver.Instance.navigate().to("https://yandex.ua");
+        objHomePage = new HomePage(Instance);
         objHomePage.clickSetCity();
-        objHomePage.setPageCity("Киев");
+        objHomePage.setPageCity("Харьков Украина ");
         int FirstCity = objHomePage.amountLinks();
         objHomePage.clickSetCity();
-        objHomePage.setPageCity("Харьков");
+        objHomePage.setPageCity("Киев Украина");
         int SecondCity = objHomePage.amountLinks();
         Assert.assertEquals(FirstCity, SecondCity);
     }

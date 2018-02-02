@@ -7,26 +7,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
 
-    public WebDriver driver;
+    public WebDriver Instance;
 
     public BasePage (WebDriver driver){
-        this.driver = driver;
+        this.Instance = driver;
     }
 
 
     public void enterText(By element, String text){
-        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(element));
-        driver.findElement(element).clear();
-        driver.findElement(element).sendKeys(text);
+        new WebDriverWait(Instance, 10).until(ExpectedConditions.elementToBeClickable(element));
+        Instance.findElement(element).clear();
+        Instance.findElement(element).sendKeys(text);
     }
 
     public void click(By element){
-        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(element));
-        driver.findElement(element).click();
+        new WebDriverWait(Instance, 10).until(ExpectedConditions.elementToBeClickable(element));
+        Instance.findElement(element).click();
     }
     public void clear(By element){
-        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(element));
-        driver.findElement(element).clear();
+        new WebDriverWait(Instance, 10).until(ExpectedConditions.elementToBeClickable(element));
+        Instance.findElement(element).clear();
 
     }
 
