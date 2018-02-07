@@ -1,5 +1,6 @@
 package Tests;
 
+import org.junit.Before;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
