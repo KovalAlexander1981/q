@@ -13,8 +13,8 @@ public class Driver {
 
     public static void Initialize() {
         if (Instance == null) {
-            if (browser.equalsIgnoreCase("chrome"))
-                Instance = new ChromeDriver();
+            if (browser.equalsIgnoreCase("chrome")){
+            Instance = new ChromeDriver();}
 
             else if (browser.equalsIgnoreCase("ff")) {
                 Instance = new FirefoxDriver();

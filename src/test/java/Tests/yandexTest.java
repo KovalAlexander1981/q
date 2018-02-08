@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.HomePage;
 import Pages.LoginPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -15,7 +16,7 @@ public class yandexTest extends BaseTest {
     private LoginPage objLoginPage;
     private HomePage objHomePage;
 
-    @Test //"Test Case 1 - Log in with right Login and Password"
+    @Test
     public void logIn() {
         System.out.println("Test 1");
         Driver.Instance.navigate().to("https://yandex.ua");
@@ -30,7 +31,7 @@ public class yandexTest extends BaseTest {
 
     }
 
-    @Test//"Test Case 2 - Log out")
+    @Test (description = "Test Case 2 - Log out")
     public void logOut() {
         System.out.println("Test 2");
         Driver.Instance.navigate().to("https://yandex.ua");
@@ -72,6 +73,7 @@ public class yandexTest extends BaseTest {
         if (passField == true) {
             System.out.println("The user enter wrong login");
         } else System.out.println("Something wrong");
+        Reporter.log("RRRRR");
     }
 
     @Test//"Test Case 5 - Check some links at the user panel")
